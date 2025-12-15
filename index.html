@@ -1,104 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>CHAOGEJILATU | Environmental Scientist</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CHAOGEJILATU - Environmental scientist specializing in climate change, agriculture, remote sensing, and geospatial analysis.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CHAOGEJILATU - Environmental scientist specializing in climate change, agriculture, remote sensing, and geospatial analysis." />
+  <meta name="color-scheme" content="light" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="CHAOGEJILATU | Environmental Scientist" />
+  <meta property="og:description" content="Climate change & agriculture, remote sensing, GIS, geospatial analysis." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://chaogejilatu.github.io/" />
+  <meta property="og:image" content="https://chaogejilatu.github.io/CHAOGEJILATU.jpg" />
+
   <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f7fa;
-      color: #333;
+    :root{
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --text:#111827;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --brand:#111827;
+      --link:#2563eb;
+      --shadow: 0 10px 30px rgba(17,24,39,.08);
+      --radius: 18px;
     }
-    header {
-      background: #1f2937;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.2em;
-      letter-spacing: 1px;
+    a{ color: var(--link); text-decoration:none; }
+    a:hover{ text-decoration: underline; }
+
+    .wrap{
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 20px 70px;
     }
-    header p {
-      margin-top: 10px;
-      font-size: 1.1em;
-      opacity: 0.9;
+
+    /* Hero */
+    header{
+      background: radial-gradient(1200px 500px at 20% 10%, #334155 0%, #111827 55%, #0b1220 100%);
+      color:#fff;
+      padding: 56px 0 34px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
     }
-    section {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
+    .hero{
+      display:grid;
+      grid-template-columns: 120px 1fr;
+      gap: 18px;
+      align-items:center;
     }
-    h2 {
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 8px;
+    .avatar{
+      width:120px;
+      height:120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(255,255,255,.25);
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      background: rgba(255,255,255,.08);
     }
-    ul {
-      line-height: 1.8;
+    .title{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
     }
-    footer {
-      background: #e5e7eb;
-      text-align: center;
-      padding: 20px;
-      margin-top: 60px;
-      font-size: 0.9em;
+    .title h1{
+      margin:0;
+      font-size: 2.1rem;
+      letter-spacing: .06em;
     }
-    a {
-      color: #2563eb;
-      text-decoration: none;
+    .subtitle{
+      margin:0;
+      color: rgba(255,255,255,.86);
+      font-size: 1.05rem;
     }
-    a:hover {
-      text-decoration: underline;
+    .meta{
+      margin-top:10px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      color: rgba(255,255,255,.78);
+      font-size: .96rem;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.14);
+    }
+
+    /* Sections */
+    .grid{
+      margin-top: 26px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+    }
+    @media (max-width: 900px){
+      .hero{ grid-template-columns: 96px 1fr; }
+      .avatar{ width:96px; height:96px; }
+      .grid{ grid-template-columns: 1fr; }
+    }
+    .card{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px 18px;
+    }
+    .card h2{
+      margin: 0 0 10px;
+      font-size: 1.15rem;
+      letter-spacing:.01em;
+    }
+    .muted{ color: var(--muted); }
+
+    ul{ margin: 8px 0 0 20px; padding:0; }
+    li{ margin: 4px 0; }
+
+    /* Authority table */
+    table{
+      width:100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: .98rem;
+    }
+    th, td{
+      text-align:left;
+      padding: 10px 10px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th{ color: var(--muted); font-weight: 600; width: 34%; }
+    code{
+      background:#f3f4f6;
+      border:1px solid #e5e7eb;
+      padding: 2px 6px;
+      border-radius: 8px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: .95em;
+    }
+
+    .links{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:8px;
+      margin-top: 6px;
+    }
+    .linkitem{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background:#fbfbfd;
+    }
+    .linkitem span{ color: var(--muted); }
+
+    footer{
+      margin-top: 22px;
+      text-align:center;
+      color: var(--muted);
+      font-size: .92rem;
     }
   </style>
+
+  <!-- Structured Data (Google / Knowledge Graph friendly) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "CHAOGEJILATU",
+    "url": "https://www.chaogejilatu.com",
+    "image": "https://chaogejilatu.github.io/CHAOGEJILATU.jpg",
+    "birthDate": "1980-03-08",
+    "birthPlace": {
+      "@type": "Place",
+      "name": "Tongliao, Inner Mongolia, China"
+    },
+    "jobTitle": "Environmental Scientist",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "National Agriculture and Food Research Organization (NARO)"
+    },
+    "sameAs": [
+      "https://www.chaogejilatu.com",
+      "https://orcid.org/0000-0002-8544-3868",
+      "https://researchmap.jp/chaogejilatu",
+      "https://scholar.google.com/citations?user=HIj0Z00AAAAJ&hl=ja",
+      "https://about.me/chaogejilatu",
+      "https://www.wikidata.org/wiki/Q135964663",
+      "https://d-nb.info/gnd/1379562554",
+      "https://aleph.nkp.cz/F/?func=find-c&ccl_term=jo20251281183"
+    ]
+  }
+  </script>
 </head>
 
 <body>
 
 <header>
-  <h1>CHAOGEJILATU</h1>
-  <p>Environmental Scientist | Climate Change & Agriculture</p>
+  <div class="wrap">
+    <div class="hero">
+      <!-- IMPORTANT: repo にある写真名が違う場合はここを変更 -->
+      <img class="avatar" src="CHAOGEJILATU.jpg" alt="CHAOGEJILATU portrait" />
+
+      <div class="title">
+        <h1>CHAOGEJILATU</h1>
+        <p class="subtitle">Environmental Scientist | Climate Change &amp; Agriculture</p>
+
+        <div class="meta">
+          <div class="pill">📍 Tsukuba, Japan</div>
+          <div class="pill">🎂 1980-03-08</div>
+          <div class="pill">🌏 Tongliao, Inner Mongolia, China</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </header>
 
-<section>
-  <h2>Profile</h2>
-  <p>
-    I am an environmental scientist specializing in climate change impacts on agriculture,
-    remote sensing, GIS, and geospatial data analysis.
-    I am currently based in Tsukuba, Japan, and work at the
-    National Agriculture and Food Research Organization (NARO).
-  </p>
-</section>
+<div class="wrap">
+  <div class="grid">
+    <!-- LEFT -->
+    <div class="card">
+      <h2>Profile</h2>
+      <p>
+        I am an environmental scientist specializing in climate change impacts on agriculture,
+        remote sensing, GIS, and geospatial data analysis.
+        I am currently based in Tsukuba, Japan, and work at the
+        National Agriculture and Food Research Organization (NARO).
+      </p>
 
-<section>
-  <h2>Research Interests</h2>
-  <ul>
-    <li>Climate change and food security</li>
-    <li>Land use / land cover change</li>
-    <li>Remote sensing, GIS, and statistical modeling</li>
-    <li>International collaborations in East Asia and globally</li>
-  </ul>
-</section>
+      <h2 style="margin-top:16px;">Research Interests</h2>
+      <ul>
+        <li>Climate change and food security</li>
+        <li>Land use / land cover change and environmental sustainability</li>
+        <li>Remote sensing, GIS, and statistical modeling</li>
+        <li>International collaborations in East Asia and global networks</li>
+      </ul>
 
-<section>
-  <h2>Links</h2>
-  <ul>
-    <li><a href="https://www.chaogejilatu.com" target="_blank">Official Website</a></li>
-    <li><a href="https://orcid.org/0000-0002-8544-3868" target="_blank">ORCID</a></li>
-    <li><a href="https://researchmap.jp/chaogejilatu" target="_blank">Researchmap</a></li>
-    <li><a href="https://scholar.google.com/citations?user=HIj0Z00AAAAJ&hl=ja" target="_blank">Google Scholar</a></li>
-    <li><a href="https://about.me/chaogejilatu" target="_blank">About.me</a></li>
-  </ul>
-</section>
+      <h2 style="margin-top:16px;">Authority &amp; Identifiers</h2>
+      <p class="muted">Key authority identifiers and reference entries (add / update as needed).</p>
+      <table>
+        <tr>
+          <th>Wikidata</th>
+          <td><a href="https://www.wikidata.org/wiki/Q135964663" target="_blank" rel="noopener">Q135964663</a></td>
+        </tr>
 
-<footer>
-  © 2025 CHAOGEJILATU. All rights reserved.
-</footer>
+        <tr>
+          <th>United States (LC / LCNAF)</th>
+          <td>
+            <span class="muted">LCCN / LCNAF:</span>
+            <code>ADD_YOUR_LCCN_HERE</code>
+            <span class="muted"> (example format: n########)</span>
+          </td>
+        </tr>
+
+        <tr>
+          <th>Germany (GND)</th>
+          <td><a href="https://d-nb.info/gnd/1379562554" target="_blank" rel="noopener">1379562554</a></td>
+        </tr>
+
+        <tr>
+          <th>Czech Republic (NKC)</th>
+          <td><code>jo20251281183</code> <span class="muted">(Czech National Library ID)</span></td>
+        </tr>
+
+        <tr>
+          <th>Israel (NLI)</th>
+          <td>
+            <span class="muted">NLI Authority ID:</span> <code>ADD_NLI_ID_HERE</code>
+          </td>
+        </tr>
+
+        <tr>
+          <th>ISNI</th>
+          <td><code>ADD_ISNI_HERE</code></td>
+        </tr>
+
+        <tr>
+          <th>VIAF</th>
+          <td><code>ADD_VIAF_HERE</code></td>
+        </tr>
+
+        <tr>
+          <th>ORCID</th>
+          <td><a href="https://orcid.org/0000-0002-8544-3868" target="_blank" rel="noopener">0000-0002-8544-3868</a></td>
+        </tr>
+
+        <tr>
+          <th>Scopus Author ID</th>
+          <td><a href="https://www.scopus.com/authid/detail.uri?authorId=59752017000" target="_blank" rel="noopener">59752017000</a></td>
+        </tr>
+
+        <tr>
+          <th>Semantic Scholar Author ID</th>
+          <td><a href="https://www.semanticscholar.org/author/2351550832" target="_blank" rel="noopener">2351550832</a></td>
+        </tr>
+      </table>
+
+      <p class="muted" style="margin-top:10px;">
+        Tip: Replace <code>ADD_...</code> fields when you have the exact IDs.
+      </p>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="card">
+      <h2>Official Links</h2>
+      <div class="links">
+        <div class="linkitem">
+          <a href="https://www.chaogejilatu.com" target="_blank" rel="noopener">Official Website (Required)</a>
+          <span>www.chaogejilatu.com</span>
+        </div>
+        <div class="linkitem">
+          <a href="https://orcid.org/0000-0002-8544-3868" target="_blank" rel="noopener">ORCID</a>
+          <span>Research ID</span>
+        </div>
+        <div class="linkitem">
+          <a href="https://researchmap.jp/chaogejilatu" target="_blank" rel="noopener">Researchmap</a>
+          <span>Japan profile</span>
+        </div>
+        <div class="linkitem">
+          <a href="https://scholar.google.com/citations?user=HIj0Z00AAAAJ&hl=ja" target="_blank" rel="noopener">Google Scholar</a>
+          <span>Citations</span>
+        </div>
+        <div class="linkitem">
+          <a href="https://about.me/chaogejilatu" target="_blank" rel="noopener">About.me</a>
+          <span>Public profile</span>
+        </div>
+        <div class="linkitem">
+          <a href="https://www.wikidata.org/wiki/Q135964663" target="_blank" rel="noopener">Wikidata</a>
+          <span>Q135964663</span>
+        </div>
+        <div class="linkitem">
+          <a href="https://d-nb.info/gnd/1379562554" target="_blank" rel="noopener">GND (Germany)</a>
+          <span>1379562554</span>
+        </div>
+      </div>
+
+      <h2 style="margin-top:16px;">Notes</h2>
+      <p class="muted" style="margin:0;">
+        This GitHub Pages site is an additional entry point. Your primary official site remains
+        <strong>www.chaogejilatu.com</strong>.
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 CHAOGEJILATU. All rights reserved.
+  </footer>
+</div>
 
 </body>
 </html>
