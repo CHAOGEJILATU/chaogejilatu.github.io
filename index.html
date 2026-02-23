@@ -8,140 +8,238 @@
   <meta name="color-scheme" content="light" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="CHAOGEJILATU | Environmental Scientist" />
-  <meta property="og:description" content="Environmental Scientist." />
+  <meta property="og:title" content="CHAOGEJILATU | Chinese Environmental Scientist" />
+  <meta property="og:description" content="Environmental scientist specializing in climate change, agriculture, remote sensing, and geospatial analysis." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://chaogejilatu.github.io/" />
   <meta property="og:image" content="https://chaogejilatu.github.io/CHAOGEJILATU.jpg" />
 
   <style>
     :root{
-      --bg:#f6f7fb;
+      --bg1:#f6f7fb;
+      --bg2:#eef2ff;
       --card:#ffffff;
-      --text:#111827;
-      --muted:#6b7280;
-      --line:#e5e7eb;
+      --text:#0b1220;
+      --muted:#5b6474;
+      --line: rgba(17,24,39,.10);
       --link:#2563eb;
-      --shadow: 0 10px 30px rgba(17,24,39,.08);
+      --shadow: 0 14px 36px rgba(17,24,39,.10);
+      --shadow2: 0 10px 24px rgba(17,24,39,.08);
       --radius: 18px;
+      --radius2: 22px;
+      --ring: 0 0 0 4px rgba(37,99,235,.14);
     }
+
     *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+
     body{
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background: var(--bg);
       color: var(--text);
-      line-height: 1.65;
+      line-height: 1.7;
+      background:
+        radial-gradient(1200px 500px at 12% 8%, rgba(99,102,241,.18) 0%, rgba(99,102,241,0) 60%),
+        radial-gradient(900px 420px at 88% 12%, rgba(37,99,235,.14) 0%, rgba(37,99,235,0) 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
     }
+
     a{ color: var(--link); text-decoration:none; }
     a:hover{ text-decoration: underline; }
 
     .wrap{
-      max-width: 1040px;
+      max-width: 1080px;
       margin: 0 auto;
-      padding: 0 20px 70px;
+      padding: 0 20px 74px;
     }
 
     /* Hero */
     header{
-      background: radial-gradient(1200px 500px at 20% 10%, #334155 0%, #111827 55%, #0b1220 100%);
+      position:relative;
       color:#fff;
-      padding: 56px 0 34px;
-      border-bottom: 1px solid rgba(255,255,255,.08);
+      padding: 60px 0 38px;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      background:
+        radial-gradient(1200px 540px at 20% 10%, #334155 0%, #111827 55%, #0b1220 100%);
+      overflow:hidden;
+      isolation:isolate;
     }
+    header::before{
+      content:"";
+      position:absolute;
+      inset:-40px -40px auto -40px;
+      height:220px;
+      background: radial-gradient(closest-side, rgba(255,255,255,.12), rgba(255,255,255,0));
+      filter: blur(0px);
+      z-index:-1;
+    }
+    header::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(900px 360px at 82% 20%, rgba(56,189,248,.12), rgba(56,189,248,0) 60%),
+        radial-gradient(860px 360px at 18% 22%, rgba(99,102,241,.14), rgba(99,102,241,0) 60%);
+      z-index:-1;
+      pointer-events:none;
+    }
+
     .hero{
       display:grid;
-      grid-template-columns: 120px 1fr;
+      grid-template-columns: 124px 1fr;
       gap: 18px;
       align-items:center;
     }
     .avatar{
-      width:120px;
-      height:120px;
+      width:124px;
+      height:124px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid rgba(255,255,255,.25);
-      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      border: 3px solid rgba(255,255,255,.22);
+      box-shadow: 0 18px 44px rgba(0,0,0,.30);
       background: rgba(255,255,255,.08);
+      transform: translateZ(0);
     }
+
     .title{
       display:flex;
       flex-direction:column;
-      gap:6px;
+      gap:7px;
+      min-width: 0;
     }
     .title h1{
       margin:0;
-      font-size: 2.1rem;
-      letter-spacing: .06em;
+      font-size: 2.25rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      line-height:1.15;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
     }
     .subtitle{
       margin:0;
-      color: rgba(255,255,255,.86);
-      font-size: 1.05rem;
+      color: rgba(255,255,255,.90);
+      font-size: 1.06rem;
+      letter-spacing:.02em;
     }
 
-    /* meta pills (keep) */
     .meta{
       margin-top:10px;
       display:flex;
       flex-wrap:wrap;
       gap:10px;
-      color: rgba(255,255,255,.78);
-      font-size: .96rem;
+      color: rgba(255,255,255,.82);
+      font-size: .95rem;
     }
     .pill{
       display:inline-flex;
       align-items:center;
       gap:8px;
-      padding: 6px 10px;
+      padding: 7px 12px;
       border-radius: 999px;
       background: rgba(255,255,255,.10);
       border: 1px solid rgba(255,255,255,.14);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 10px 24px rgba(0,0,0,.10);
     }
 
-    /* Sections */
+    /* Layout */
     .grid{
       margin-top: 26px;
       display:grid;
-      grid-template-columns: 1.2fr .8fr;
+      grid-template-columns: 1.25fr .75fr;
       gap: 18px;
     }
-    @media (max-width: 900px){
+    @media (max-width: 940px){
       .hero{ grid-template-columns: 96px 1fr; }
       .avatar{ width:96px; height:96px; }
+      .title h1{ font-size: 2.0rem; }
       .grid{ grid-template-columns: 1fr; }
     }
+
+    /* Cards */
     .card{
-      background: var(--card);
+      background: rgba(255,255,255,.88);
       border: 1px solid var(--line);
-      border-radius: var(--radius);
+      border-radius: var(--radius2);
       box-shadow: var(--shadow);
       padding: 18px 18px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
+    .card:hover{ box-shadow: 0 18px 44px rgba(17,24,39,.12); }
     .card h2{
       margin: 0 0 10px;
-      font-size: 1.15rem;
-      letter-spacing:.01em;
+      font-size: 1.12rem;
+      letter-spacing:.02em;
+      display:flex;
+      align-items:center;
+      gap:10px;
     }
-    .muted{ color: var(--muted); }
+    .card h2::after{
+      content:"";
+      height:1px;
+      flex:1;
+      background: linear-gradient(90deg, rgba(17,24,39,.10), rgba(17,24,39,0));
+      margin-top: 2px;
+    }
 
-    ul{ margin: 8px 0 0 20px; padding:0; }
-    li{ margin: 4px 0; }
+    .muted{ color: var(--muted); }
+    .lead{
+      font-size: 1.02rem;
+      margin: 10px 0 0;
+    }
+    .lead strong{ font-weight: 750; }
+
+    /* Interest list -> elegant bullets */
+    ul{ margin: 10px 0 0 0; padding:0; list-style:none; }
+    li{
+      margin: 8px 0;
+      padding-left: 22px;
+      position:relative;
+    }
+    li::before{
+      content:"";
+      width:10px;
+      height:10px;
+      border-radius: 999px;
+      position:absolute;
+      left:0;
+      top:.55em;
+      background: radial-gradient(circle at 30% 30%, rgba(37,99,235,.95), rgba(37,99,235,.35));
+      box-shadow: 0 6px 14px rgba(37,99,235,.22);
+    }
 
     /* Authority table */
     table{
       width:100%;
-      border-collapse: collapse;
-      margin-top: 8px;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin-top: 10px;
       font-size: .98rem;
+      overflow:hidden;
+      border: 1px solid rgba(17,24,39,.10);
+      border-radius: 16px;
+      background: rgba(255,255,255,.82);
+    }
+    tr:nth-child(odd) td, tr:nth-child(odd) th{
+      background: rgba(17,24,39,.02);
     }
     th, td{
       text-align:left;
-      padding: 10px 10px;
-      border-bottom: 1px solid var(--line);
+      padding: 11px 12px;
+      border-bottom: 1px solid rgba(17,24,39,.08);
       vertical-align: top;
     }
-    th{ color: var(--muted); font-weight: 600; width: 34%; }
+    tr:last-child th, tr:last-child td{ border-bottom:none; }
+    th{
+      color: var(--muted);
+      font-weight: 650;
+      width: 34%;
+      white-space:nowrap;
+    }
 
     code{
       background:#f3f4f6;
@@ -152,29 +250,53 @@
       font-size: .95em;
     }
 
+    /* Link list */
     .links{
       display:grid;
       grid-template-columns: 1fr;
-      gap:8px;
-      margin-top: 6px;
+      gap:10px;
+      margin-top: 8px;
     }
     .linkitem{
       display:flex;
       justify-content:space-between;
-      gap:10px;
-      padding: 10px 12px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background:#fbfbfd;
+      align-items:center;
+      gap:12px;
+      padding: 11px 12px;
+      border: 1px solid rgba(17,24,39,.10);
+      border-radius: 16px;
+      background: rgba(255,255,255,.82);
       transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
     }
     .linkitem:hover{
       transform: translateY(-1px);
-      box-shadow: 0 12px 26px rgba(17,24,39,.10);
+      box-shadow: var(--shadow2);
       border-color: rgba(37,99,235,.25);
       text-decoration:none;
     }
-    .linkitem span{ color: var(--muted); }
+    .linkitem a{
+      font-weight: 650;
+      min-width: 0;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+    }
+    .linkitem span{
+      color: var(--muted);
+      font-size: .92rem;
+      white-space:nowrap;
+      flex-shrink:0;
+    }
+    .linkitem:focus-within{ box-shadow: var(--shadow2), var(--ring); }
+
+    .note{
+      margin-top: 14px;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(17,24,39,.10);
+      background: rgba(37,99,235,.05);
+      color: rgba(11,18,32,.92);
+    }
 
     footer{
       margin-top: 22px;
@@ -240,8 +362,8 @@
       <div class="title">
         <h1>CHAOGEJILATU</h1>
 
-        <!-- ✅ ここは要望どおり「Environmental Scientist」だけ -->
-        <p class="subtitle">Environmental Scientist</p>
+        <!-- Subtitle -->
+        <p class="subtitle">环境科学者</p>
 
         <div class="meta">
           <div class="pill">📍 Tokyo, Japan</div>
@@ -258,11 +380,15 @@
     <!-- LEFT -->
     <div class="card">
       <h2>Profile</h2>
-      <p>
-        I am an environmental scientist specializing in climate change impacts on agriculture,
-        remote sensing, GIS, and geospatial data analysis.
-        I am currently based in Tsukuba, Japan, and work at the
-        National Agriculture and Food Research Organization (NARO).
+
+      <!-- more stylish + impactful profile text -->
+      <p class="lead">
+        <strong>Turning Earth data into decisions.</strong><br />
+        I study how <strong>climate change</strong> reshapes <strong>agriculture</strong> and <strong>land systems</strong> by combining
+        <strong>remote sensing</strong>, <strong>GIS</strong>, and <strong>statistical modeling</strong>.
+        My work focuses on building reproducible analyses and clear, decision-ready insights from complex geospatial data.
+        <br /><br />
+        <span class="muted">Based in Tsukuba, Japan · National Agriculture and Food Research Organization (NARO)</span>
       </p>
 
       <h2 style="margin-top:16px;">Research Interests</h2>
@@ -306,7 +432,6 @@
           </td>
         </tr>
 
-        <!-- ✅ Czech: 追加URLを入れて「青色リンク化」 -->
         <tr>
           <th>Czech Republic (NKC)</th>
           <td>
@@ -317,7 +442,6 @@
           </td>
         </tr>
 
-        <!-- ✅ CANTIC: 追加 -->
         <tr>
           <th>CANTIC (Catalonia)</th>
           <td>
@@ -327,7 +451,6 @@
           </td>
         </tr>
 
-        <!-- ✅ VIAF: 追加 -->
         <tr>
           <th>VIAF</th>
           <td>
@@ -335,7 +458,6 @@
           </td>
         </tr>
 
-        <!-- ✅ Treccani (Neologismi): 追加 -->
         <tr>
           <th>Treccani (Neologismi)</th>
           <td>
@@ -370,19 +492,16 @@
           <span>www.chaogejilatu.com</span>
         </div>
 
-        <!-- ✅ WordPress: 追加 -->
         <div class="linkitem">
           <a href="https://chaogejilatu.wordpress.com/" target="_blank" rel="noopener">WordPress (Blog)</a>
           <span>chaogejilatu.wordpress.com</span>
         </div>
 
-        <!-- ✅ VIAF: 追加 -->
         <div class="linkitem">
           <a href="http://viaf.org/viaf/7880176726014124980005" target="_blank" rel="noopener">VIAF</a>
           <span>7880176726014124980005</span>
         </div>
 
-        <!-- ✅ Treccani (Neologismi): 追加 -->
         <div class="linkitem">
           <a href="https://www.treccani.it/vocabolario/neo-chaogejilatu_(Neologismi)/" target="_blank" rel="noopener">Treccani (Neologismi)</a>
           <span>neo-chaogejilatu</span>
@@ -427,24 +546,21 @@
           <span>explore.gnd.network</span>
         </div>
 
-        <!-- ✅ Czech: 追加URLを入れて更新 -->
         <div class="linkitem">
           <a href="https://aleph.nkp.cz/dai/jo20251281183" target="_blank" rel="noopener">Czech NKC</a>
           <span>jo20251281183</span>
         </div>
 
-        <!-- ✅ CANTIC: 追加 -->
         <div class="linkitem">
           <a href="https://cantic.bnc.cat/detall/411/145823" target="_blank" rel="noopener">CANTIC (Catalonia)</a>
           <span>981061526729406706</span>
         </div>
       </div>
 
-      <h2 style="margin-top:16px;">Notes</h2>
-      <p class="muted" style="margin:0;">
+      <div class="note">
         This GitHub Pages site is an additional entry point. Your primary official site remains
         <strong>www.chaogejilatu.com</strong>.
-      </p>
+      </div>
     </div>
   </div>
 
