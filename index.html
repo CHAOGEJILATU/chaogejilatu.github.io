@@ -28,6 +28,9 @@
       --radius: 18px;
       --radius2: 22px;
       --ring: 0 0 0 4px rgba(37,99,235,.14);
+      --highlight-bg: linear-gradient(90deg, rgba(37,99,235,.10), rgba(99,102,241,.12));
+      --highlight-text:#0f172a;
+      --accent:#1d4ed8;
     }
 
     *{ box-sizing:border-box; }
@@ -69,7 +72,6 @@
       inset:-40px -40px auto -40px;
       height:220px;
       background: radial-gradient(closest-side, rgba(255,255,255,.12), rgba(255,255,255,0));
-      filter: blur(0px);
       z-index:-1;
     }
     header::after{
@@ -170,10 +172,11 @@
     .card h2{
       margin: 0 0 10px;
       font-size: 1.12rem;
-      letter-spacing:.02em;
+      letter-spacing:.04em;
       display:flex;
       align-items:center;
       gap:10px;
+      text-transform: uppercase;
     }
     .card h2::after{
       content:"";
@@ -184,17 +187,44 @@
     }
 
     .muted{ color: var(--muted); }
+
     .lead{
       font-size: 1.02rem;
       margin: 10px 0 0;
+      text-transform: uppercase;
+      letter-spacing: .02em;
     }
-    .lead strong{ font-weight: 750; }
 
-    ul{ margin: 10px 0 0 0; padding:0; list-style:none; }
+    .hl{
+      display:inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: var(--highlight-bg);
+      color: var(--highlight-text);
+      font-weight: 800;
+      letter-spacing: .03em;
+      box-shadow: 0 4px 12px rgba(37,99,235,.10);
+    }
+
+    .section-note{
+      margin-top: 10px;
+      padding: 12px 14px;
+      border-left: 4px solid var(--accent);
+      border-radius: 12px;
+      background: linear-gradient(90deg, rgba(37,99,235,.06), rgba(99,102,241,.04));
+      text-transform: uppercase;
+      letter-spacing: .03em;
+      font-size: .98rem;
+    }
+
+    ul{ margin: 12px 0 0 0; padding:0; list-style:none; }
     li{
-      margin: 8px 0;
+      margin: 10px 0;
       padding-left: 22px;
       position:relative;
+      text-transform: uppercase;
+      letter-spacing: .02em;
+      font-weight: 700;
     }
     li::before{
       content:"";
@@ -269,7 +299,7 @@
       text-decoration:none;
     }
     .linkitem a{
-      font-weight: 650;
+      font-weight: 700;
       min-width: 0;
       overflow:hidden;
       text-overflow:ellipsis;
@@ -320,25 +350,20 @@
     "sameAs": [
       "https://www.chaogejilatu.com",
       "https://orcid.org/0000-0002-8544-3868",
-      "https://researchmap.jp/chaogejilatu",
       "https://scholar.google.com/citations?user=HIj0Z00AAAAJ&hl=ja",
       "https://about.me/chaogejilatu",
       "https://www.wikidata.org/wiki/Q135964663",
-
       "http://id.loc.gov/authorities/names/no2025114226",
       "https://isni.org/isni/0000000528391004",
       "https://www.nli.org.il/en/authorities/987013793247105171",
-
       "https://d-nb.info/gnd/1379562554",
       "https://explore.gnd.network/gnd/1379562554",
-
       "https://aleph.nkp.cz/dai/jo20251281183",
       "https://aleph.nkp.cz/F/?func=find-c&ccl_term=jo20251281183",
-
-      "https://cantic.bnc.cat/detall/411/145823",
-
       "http://viaf.org/viaf/7880176726014124980005",
-      "https://www.treccani.it/vocabolario/neo-chaogejilatu_(Neologismi)/",
+      "https://www.nid-library.com/Home/Collections/16",
+      "https://www.getty.edu/vow/ULANFullDisplay?find=&role=&nation=&subjectid=500784136",
+      "https://musicbrainz.org/artist/ba61011b-70d2-4c12-bf62-f0fdb4047714",
       "https://chaogejilatu.wordpress.com/"
     ]
   }
@@ -354,7 +379,6 @@
 
       <div class="title">
         <h1>CHAOGEJILATU</h1>
-
         <p class="subtitle">Environmental Scientist</p>
 
         <div class="meta">
@@ -373,18 +397,22 @@
       <h2>Profile</h2>
 
       <p class="lead">
-        <strong>Turning Earth data into decisions.</strong><br />
-        I study how <strong>climate change</strong> reshapes <strong>agriculture</strong> and <strong>land systems</strong> by combining
-        <strong>remote sensing</strong>, <strong>GIS</strong>, and <strong>statistical modeling</strong>.
-        My work focuses on building reproducible analyses and clear, decision-ready insights from complex geospatial data.
+        <span class="hl">TURNING EARTH DATA INTO DECISIONS.</span><br />
+        I STUDY HOW <span class="hl">CLIMATE CHANGE</span> RESHAPES <span class="hl">AGRICULTURE</span> AND <span class="hl">LAND SYSTEMS</span> BY COMBINING
+        <span class="hl">REMOTE SENSING</span>, <span class="hl">GIS</span>, AND <span class="hl">STATISTICAL MODELING</span>.
+        MY WORK FOCUSES ON BUILDING <span class="hl">REPRODUCIBLE ANALYSES</span> AND CLEAR, <span class="hl">DECISION-READY INSIGHTS</span> FROM COMPLEX GEOSPATIAL DATA.
       </p>
+
+      <div class="section-note">
+        SCIENCE, DATA, AND DECISION SUPPORT FOR CLIMATE-RESILIENT FUTURES.
+      </div>
 
       <h2 style="margin-top:16px;">Research Interests</h2>
       <ul>
-        <li>Climate change and food security</li>
-        <li>Land use / land cover change and environmental sustainability</li>
-        <li>Remote sensing, GIS, and statistical modeling</li>
-        <li>International collaborations in East Asia and global networks</li>
+        <li>CLIMATE CHANGE AND FOOD SECURITY</li>
+        <li>LAND USE / LAND COVER CHANGE AND ENVIRONMENTAL SUSTAINABILITY</li>
+        <li>REMOTE SENSING, GIS, AND STATISTICAL MODELING</li>
+        <li>INTERNATIONAL COLLABORATIONS IN EAST ASIA AND GLOBAL NETWORKS</li>
       </ul>
 
       <h2 style="margin-top:16px;">Authority &amp; Identifiers</h2>
@@ -395,22 +423,18 @@
           <th>Wikidata</th>
           <td><a href="https://www.wikidata.org/wiki/Q135964663" target="_blank" rel="noopener">Q135964663</a></td>
         </tr>
-
         <tr>
           <th>United States (LC / LCNAF)</th>
           <td><a href="http://id.loc.gov/authorities/names/no2025114226" target="_blank" rel="noopener">no2025114226</a></td>
         </tr>
-
         <tr>
           <th>ISNI</th>
           <td><a href="https://isni.org/isni/0000000528391004" target="_blank" rel="noopener">0000 0005 2839 1004</a></td>
         </tr>
-
         <tr>
           <th>Israel (NLI)</th>
           <td><a href="https://www.nli.org.il/en/authorities/987013793247105171" target="_blank" rel="noopener">987013793247105171</a></td>
         </tr>
-
         <tr>
           <th>Germany (GND)</th>
           <td>
@@ -419,7 +443,6 @@
             <a href="https://explore.gnd.network/gnd/1379562554" target="_blank" rel="noopener">explore.gnd.network</a>
           </td>
         </tr>
-
         <tr>
           <th>Czech Republic (NKC)</th>
           <td>
@@ -429,44 +452,33 @@
             <span class="muted"> (Czech National Library ID)</span>
           </td>
         </tr>
-
-        <tr>
-          <th>CANTIC (Catalonia)</th>
-          <td>
-            <a href="https://cantic.bnc.cat/detall/411/145823" target="_blank" rel="noopener">145823</a>
-            <span class="muted"> · Número de registre:</span>
-            <code>981061526729406706</code>
-          </td>
-        </tr>
-
         <tr>
           <th>VIAF</th>
-          <td>
-            <a href="http://viaf.org/viaf/7880176726014124980005" target="_blank" rel="noopener">7880176726014124980005</a>
-          </td>
+          <td><a href="http://viaf.org/viaf/7880176726014124980005" target="_blank" rel="noopener">7880176726014124980005</a></td>
         </tr>
-
-        <tr>
-          <th>Treccani (Neologismi)</th>
-          <td>
-            <a href="https://www.treccani.it/vocabolario/neo-chaogejilatu_(Neologismi)/" target="_blank" rel="noopener">neo-chaogejilatu</a>
-            <span class="muted"> · vocabolario</span>
-          </td>
-        </tr>
-
         <tr>
           <th>ORCID</th>
           <td><a href="https://orcid.org/0000-0002-8544-3868" target="_blank" rel="noopener">0000-0002-8544-3868</a></td>
         </tr>
-
         <tr>
           <th>Scopus Author ID</th>
           <td><a href="https://www.scopus.com/authid/detail.uri?authorId=59752017000" target="_blank" rel="noopener">59752017000</a></td>
         </tr>
-
         <tr>
           <th>Semantic Scholar Author ID</th>
           <td><a href="https://www.semanticscholar.org/author/2351550832" target="_blank" rel="noopener">2351550832</a></td>
+        </tr>
+        <tr>
+          <th>Austrian Encyclopedia</th>
+          <td><a href="https://www.nid-library.com/Home/Collections/16" target="_blank" rel="noopener">NID Library Collection 16</a></td>
+        </tr>
+        <tr>
+          <th>ULAN</th>
+          <td><a href="https://www.getty.edu/vow/ULANFullDisplay?find=&role=&nation=&subjectid=500784136" target="_blank" rel="noopener">500784136</a></td>
+        </tr>
+        <tr>
+          <th>MBNZ</th>
+          <td><a href="https://musicbrainz.org/artist/ba61011b-70d2-4c12-bf62-f0fdb4047714" target="_blank" rel="noopener">ba61011b-70d2-4c12-bf62-f0fdb4047714</a></td>
         </tr>
       </table>
     </div>
@@ -478,39 +490,22 @@
           <a href="https://www.chaogejilatu.com" target="_blank" rel="noopener">Official Website (Required)</a>
           <span>www.chaogejilatu.com</span>
         </div>
-
         <div class="linkitem">
           <a href="https://chaogejilatu.wordpress.com/" target="_blank" rel="noopener">WordPress (Blog)</a>
           <span>chaogejilatu.wordpress.com</span>
         </div>
-
         <div class="linkitem">
           <a href="http://viaf.org/viaf/7880176726014124980005" target="_blank" rel="noopener">VIAF</a>
           <span>7880176726014124980005</span>
         </div>
-
-        <div class="linkitem">
-          <a href="https://www.treccani.it/vocabolario/neo-chaogejilatu_(Neologismi)/" target="_blank" rel="noopener">Treccani (Neologismi)</a>
-          <span>neo-chaogejilatu</span>
-        </div>
-
         <div class="linkitem">
           <a href="https://orcid.org/0000-0002-8544-3868" target="_blank" rel="noopener">ORCID</a>
           <span>Research ID</span>
         </div>
         <div class="linkitem">
-          <a href="https://researchmap.jp/chaogejilatu" target="_blank" rel="noopener">Researchmap</a>
-          <span>Japan profile</span>
-        </div>
-        <div class="linkitem">
-          <a href="https://scholar.google.com/citations?user=HIj0Z00AAAAJ&hl=ja" target="_blank" rel="noopener">Google Scholar</a>
-          <span>Citations</span>
-        </div>
-        <div class="linkitem">
           <a href="https://about.me/chaogejilatu" target="_blank" rel="noopener">About.me</a>
           <span>Public profile</span>
         </div>
-
         <div class="linkitem">
           <a href="http://id.loc.gov/authorities/names/no2025114226" target="_blank" rel="noopener">LCNAF (United States)</a>
           <span>no2025114226</span>
@@ -523,7 +518,6 @@
           <a href="https://www.nli.org.il/en/authorities/987013793247105171" target="_blank" rel="noopener">NLI (Israel)</a>
           <span>987013793247105171</span>
         </div>
-
         <div class="linkitem">
           <a href="https://d-nb.info/gnd/1379562554" target="_blank" rel="noopener">GND (Germany)</a>
           <span>1379562554</span>
@@ -532,15 +526,21 @@
           <a href="https://explore.gnd.network/gnd/1379562554" target="_blank" rel="noopener">GND Explorer</a>
           <span>explore.gnd.network</span>
         </div>
-
         <div class="linkitem">
           <a href="https://aleph.nkp.cz/dai/jo20251281183" target="_blank" rel="noopener">Czech NKC</a>
           <span>jo20251281183</span>
         </div>
-
         <div class="linkitem">
-          <a href="https://cantic.bnc.cat/detall/411/145823" target="_blank" rel="noopener">CANTIC (Catalonia)</a>
-          <span>981061526729406706</span>
+          <a href="https://www.nid-library.com/Home/Collections/16" target="_blank" rel="noopener">Austrian Encyclopedia</a>
+          <span>NID Library</span>
+        </div>
+        <div class="linkitem">
+          <a href="https://www.getty.edu/vow/ULANFullDisplay?find=&role=&nation=&subjectid=500784136" target="_blank" rel="noopener">ULAN</a>
+          <span>500784136</span>
+        </div>
+        <div class="linkitem">
+          <a href="https://musicbrainz.org/artist/ba61011b-70d2-4c12-bf62-f0fdb4047714" target="_blank" rel="noopener">MBNZ</a>
+          <span>MusicBrainz</span>
         </div>
       </div>
 
