@@ -325,6 +325,136 @@
       color: var(--muted);
       font-size: .92rem;
     }
+
+  /* Global editorial refinement */
+  body{
+    background:
+      radial-gradient(1100px 520px at 8% 4%, rgba(14,165,233,.14) 0%, rgba(14,165,233,0) 62%),
+      radial-gradient(1000px 540px at 94% 8%, rgba(79,70,229,.14) 0%, rgba(79,70,229,0) 60%),
+      linear-gradient(180deg, #f8fafc 0%, #eef2ff 48%, #f8fafc 100%);
+  }
+
+  header{
+    border-bottom: 1px solid rgba(125,211,252,.24);
+    background:
+      radial-gradient(760px 300px at 82% 12%, rgba(14,165,233,.24), transparent 64%),
+      radial-gradient(720px 320px at 16% 8%, rgba(99,102,241,.25), transparent 65%),
+      linear-gradient(125deg, #081426 0%, #12213a 48%, #0a3342 100%);
+  }
+
+  header::after{
+    background:
+      linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px),
+      radial-gradient(900px 360px at 82% 20%, rgba(56,189,248,.14), rgba(56,189,248,0) 60%);
+    background-size: 42px 42px, 42px 42px, auto;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,.72), transparent);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.72), transparent);
+  }
+
+  .avatar{
+    border: 3px solid rgba(186,230,253,.58);
+    box-shadow: 0 20px 52px rgba(2,8,23,.42), 0 0 0 7px rgba(255,255,255,.06);
+  }
+
+  .title h1{
+    background: linear-gradient(90deg, #ffffff 0%, #dbeafe 62%, #a5f3fc 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    text-shadow: 0 10px 28px rgba(2,8,23,.26);
+  }
+
+  .subtitle{
+    color:#dbeafe;
+    font-weight:650;
+  }
+
+  .pill{
+    background:rgba(255,255,255,.09);
+    border-color:rgba(186,230,253,.22);
+  }
+
+  .card{
+    background:rgba(255,255,255,.91);
+    border:1px solid rgba(30,64,175,.10);
+    box-shadow:0 18px 48px rgba(30,41,59,.10);
+  }
+
+  .card h2{
+    color:#0f2747;
+    letter-spacing:.075em;
+  }
+
+  .card h2::before{
+    content:"";
+    width:5px;
+    height:20px;
+    border-radius:999px;
+    background:linear-gradient(180deg,#2563eb,#06b6d4);
+    box-shadow:0 4px 12px rgba(37,99,235,.28);
+  }
+
+  .lead,
+  .section-note,
+  .card > p,
+  .note{
+    text-align:justify;
+    text-justify:inter-word;
+    text-align-last:left;
+    hyphens:auto;
+    -webkit-hyphens:auto;
+  }
+
+  .lead{
+    line-height:1.9;
+  }
+
+  .hl{
+    background:linear-gradient(90deg,rgba(37,99,235,.09),rgba(6,182,212,.11));
+    box-shadow:none;
+  }
+
+  .section-note{
+    border-left-color:#0ea5e9;
+    background:linear-gradient(90deg,rgba(14,165,233,.08),rgba(79,70,229,.045));
+  }
+
+  table{
+    box-shadow:0 10px 28px rgba(15,23,42,.055);
+  }
+
+  tr{
+    transition:background-color .18s ease;
+  }
+
+  tr:hover td,
+  tr:hover th{
+    background:rgba(219,234,254,.38);
+  }
+
+  .linkitem{
+    border-color:rgba(30,64,175,.11);
+    box-shadow:0 7px 18px rgba(15,23,42,.035);
+  }
+
+  .linkitem:hover{
+    border-color:rgba(14,165,233,.38);
+    box-shadow:0 14px 30px rgba(30,64,175,.10);
+  }
+
+  footer{
+    padding-top:8px;
+    letter-spacing:.035em;
+  }
+
+  @media (max-width:640px){
+    header{ padding-top:42px; }
+    .wrap{ padding-left:16px; padding-right:16px; }
+    .card{ border-radius:18px; padding:17px 15px; }
+    .lead,.section-note,.card > p,.note{ text-align:justify; }
+  }
+
   </style>
 
   <script type="application/ld+json">
@@ -349,7 +479,7 @@
       "https://orcid.org/0000-0002-8544-3868",
       "https://scholar.google.com/citations?user=HIj0Z00AAAAJ&hl=ja",
       "https://about.me/chaogejilatu",
-      "https://www.wikidata.org/wiki/Q135964663",
+      "https://www.wikidata.org/wiki/Q139841333",
       "http://id.loc.gov/authorities/names/no2025114226",
       "https://isni.org/isni/0000000528391004",
       "https://www.nli.org.il/en/authorities/987013793247105171",
@@ -419,7 +549,7 @@
       <table>
         <tr>
           <th>Wikidata</th>
-          <td><a href="https://www.wikidata.org/wiki/Q135964663" target="_blank" rel="noopener">Q135964663</a></td>
+          <td><a href="https://www.wikidata.org/wiki/Q139841333" target="_blank" rel="noopener">Q139841333</a></td>
         </tr>
         <tr>
           <th>United States (LC / LCNAF)</th>
@@ -558,7 +688,7 @@
   </div>
 
   <footer>
-    © 2025 CHAOGEJILATU. All rights reserved.
+    © 2026 CHAOGEJILATU. All rights reserved.
   </footer>
 </div>
 
